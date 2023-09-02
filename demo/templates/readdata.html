@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <title>Admin Form</title>
+
+</head>
+<body>
+    <table>
+      <thead>
+            <tr>
+            <th>id</th>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Discription</th>
+            <th>Categories</th>
+            </tr>
+    </thead>
+        <tbody>
+            {% for i in data%}
+           <tr>
+            <td>{{i.id}}</td>
+            <td><img src="http://127.0.0.1:8000/images/{{i.image}}" alt=""  height="100px" width="100px"> </td>
+            <td>{{i.name}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.discription}}</td>
+            <td>{{i.categories}}</td>
+            <td><a class="" href="delete/{{i.id}}"><button  class="btn btn-light">Delete</button></a></td>
+            <td><a class="" href="update/{{i.id}}"><button class="btn btn-secondary">Update</button></a></td>
+           </tr>
+           {% endfor%}
+        </tbody>
+          
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>products booked by {{user}}</h1>
+   
+    
+    
+    <table border="5px">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Discription</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in logd %}
+            <tr>
+                <td>{{i.user_pay.id}}</td>
+                <td>{{i.user_pay.name}}</td>
+                <td>{{i.user_pay.price}}</td>
+                <td><img src="http://127.0.0.1:8000/images/{{i.user_pay.image}}" alt=""> </td>
+                <td>{{i.user_pay.description}}</td>
+
+            </tr>
+            {% endfor %} 
+        </tbody>
+    </table>
+
+</body>
+</html>

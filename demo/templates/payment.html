@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+        <div class="row d-flex align-item-centre justify-content-centre h-100" >
+            <div class="col-md-8 col-lg-7 col-xl-6">
+            <img src="/static/assets/images/payment.jpg" alt="phone-image" class="img-fluid" >
+            </div>
+        <div class="col-md-7 col-lg-5 col-xl-4 offset-xl-1">
+            <form action="" method="post">
+                {%csrf_token%}
+                <!-- First Name -->
+                <div class="form-outline  mb-4">
+                    <label class="form-label" for="form1example13">First Name</label> 
+                    <input type="text" for="form1example13" id="" class="form-control form-control-lg" name="fname" required>
+                </div>
+                <!-- Last Name  -->
+                <div class="form-outline mb-4">
+                    <label for="form1example23" class="form-label">Last Name</label>
+                    <input type="text" class="form-control form-control-lg" for="form1example23" name="lname" required>
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label" for="form1example23">Email</label>
+                    <input type="email" id="" class="form-control" name="mail" required>
+                </div>
+                <!-- address -->
+                <label for="">Shipping Address</label>
+                <div class="form-outline mb-4"><br>
+                 <input type="text" id="" class="form-control" name="address" required> 
+                 <label class="form label" for="form1example13">Street Address</label> 
+                 
+                </div>
+                <div class="form-outline mb-4">
+                    <input class="form-control" type="text" id="" for="form1example13" name="saddress" required>
+                    <label class="form-label" for="form1example13">Street Address line2</label>
+                </div>
+                <div class="d-flex">
+                    <div>
+                        <input class="form-control" type="text"  id="" for="form1example13" name="city" required>
+                        <label  for="form1example23" class="form-label">City</label><br><br>
+                    </div>
+                    <div>
+                        <input class="form-control" type="text"  id="" for="form1example13" name="state" required>
+                        <label class="form-label" for="form1example13">State</label>
+                     </div>
+                     </div>
+                     <div>
+                        <input class="form-control" type="text"  id="" for="form1example13" name="code" required>
+                        <label class="form-label" for="form1example13">Zip Code</label>
+                     </div>
+                    
+                <div class="">
+                        <h4>Delivery Method</h4>
+
+                 <input type="radio" name="paymt" id="">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
+                    <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z"/>
+                    <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"/>
+                  </svg> Credit/Debit Card
+                <input type="radio" name="paymt" id="">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-paypal" viewBox="0 0 16 16">
+                    <path d="M14.06 3.713c.12-1.071-.093-1.832-.702-2.526C12.628.356 11.312 0 9.626 0H4.734a.7.7 0 0 0-.691.59L2.005 13.509a.42.42 0 0 0 .415.486h2.756l-.202 1.28a.628.628 0 0 0 .62.726H8.14c.429 0 .793-.31.862-.731l.025-.13.48-3.043.03-.164.001-.007a.351.351 0 0 1 .348-.297h.38c1.266 0 2.425-.256 3.345-.91.379-.27.712-.603.993-1.005a4.942 4.942 0 0 0 .88-2.195c.242-1.246.13-2.356-.57-3.154a2.687 2.687 0 0 0-.76-.59l-.094-.061ZM6.543 8.82a.695.695 0 0 1 .321-.079H8.3c2.82 0 5.027-1.144 5.672-4.456l.003-.016c.217.124.4.27.548.438.546.623.679 1.535.45 2.71-.272 1.397-.866 2.307-1.663 2.874-.802.57-1.842.815-3.043.815h-.38a.873.873 0 0 0-.863.734l-.03.164-.48 3.043-.024.13-.001.004a.352.352 0 0 1-.348.296H5.595a.106.106 0 0 1-.105-.123l.208-1.32.845-5.214Z"/>
+                  </svg>PayPal
+                        
+                </div>
+              
+
+                
+                
+              
+                <div class="d-flex">
+                    
+                    <!-- submit button -->
+                    <button class="btn btn-primary  btn-lg btn-block">Submit</button>
+
+                </div>
+
+            </form>
+
+       
+    
+</body>
+</html>
